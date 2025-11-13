@@ -1,0 +1,606 @@
+/* --- Paleta de Colores "Old Money" y Variables Globales --- */
+:root {
+    /* Fondo principal (beige claro) */
+    --color-fondo-claro: #F4F0E8;
+    /* Fondo oscuro (header/footer) - ACTUALIZADO A NEGRO */
+    --color-fondo-oscuro: #ffffff;
+    /* Texto principal (casi negro) */
+    --color-texto-principal: #1A1A1A;
+    /* Texto claro (sobre fondo oscuro) */
+    --color-texto-claro: #000000;
+    /* Acento (rojo oscuro/vino) */
+    --color-acento-rojo: #7D0A0A;
+    /* Gris oscuro (subtítulos, texto secundario) */
+    --color-gris-oscuro: #5E5E5E;
+    /* Gris claro (bordes) */
+    --color-gris-claro: #A7A7A7;
+
+    /* Definición de fuentes */
+    --font-family-serif: 'Georgia', 'Times New Roman', Times, serif;
+    --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Reseteo Básico y Estilos Globales --- */
+* {
+    /* Asegura que padding y border se incluyan en el ancho/alto total */
+    box-sizing: border-box;
+    /* Reseteo de márgenes y paddings por defecto */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* Comportamiento de scroll suave al usar enlaces ancla (#) */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Color de fondo y texto principal */
+    /* El color de fondo claro ahora es un fallback */
+    background-color: var(--color-fondo-claro);
+    
+    /* --- IMAGEN DE FONDO AÑADIDA --- */
+    /* Usa una superposición de color (el fondo claro al 80% de opacidad)
+       sobre la imagen de fondo para mantener la legibilidad.
+       
+       ¡CAMBIA 'imagenes/fondo.jpg' POR LA RUTA DE TU IMAGEN!
+    */
+    background-image: linear-gradient(rgba(244, 240, 232, 0.8), rgba(244, 240, 232, 0.8)), url('imagenes/fondo.jpg');
+    
+    /* Asegura que la imagen cubra toda la pantalla */
+    background-size: cover;
+    /* Evita que la imagen se repita */
+    background-repeat: no-repeat;
+    /* Fija la imagen para que no se mueva con el scroll (efecto paralaje) */
+    background-attachment: fixed;
+    /* Centra la imagen */
+    background-position: center;
+    /* --- FIN DE IMAGEN DE FONDO --- */
+    
+    color: var(--color-texto-principal);
+    /* Fuente sans-serif para el cuerpo (mejor legibilidad) */
+    font-family: var(--font-family-sans);
+    /* Espaciado de línea */
+    line-height: 1.6;
+    /* Evita que el footer se suba en páginas con poco contenido */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo principal para que ocupe el espacio restante */
+main {
+    flex-grow: 1;
+}
+
+/* Estilos para encabezados (fuente serif elegante) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--color-texto-principal);
+    margin-bottom: 0.75rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Estilos para párrafos */
+p {
+    margin-bottom: 1rem;
+    color: var(--color-gris-oscuro);
+}
+
+/* Estilos para enlaces */
+a {
+    /* Quita el subrayado por defecto */
+    text-decoration: none;
+    /* Color de enlace (usamos el acento) */
+    color: var(--color-acento-rojo);
+    /* Transición suave para efectos hover */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    /* Oscurece el color al pasar el mouse */
+    color: #4a0606;
+}
+
+/* Estilos para listas (usado en la navegación) */
+ul {
+    list-style-type: none;
+}
+
+/* Asegura que las imágenes no se desborden de su contenedor */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Clase Contenedor (Utilidad) --- */
+.container {
+    /* Ancho máximo del contenido */
+    max-width: 1100px;
+    /* Centrado automático horizontal */
+    margin-left: auto;
+    margin-right: auto;
+    /* Espaciado lateral (padding) para móviles */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* --- Estilos del Encabezado (Header) --- */
+.site-header {
+    background-color: var(--color-fondo-oscuro);
+    padding: 1rem 0;
+    /* Sombra sutil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Se mantiene pegajoso en la parte superior */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    /* Flexbox para alinear logo y nav */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    /* Altura máxima del logo */
+    max-height: 120px;
+    /* --- SOLUCIÓN LOGO NEGRO SOBRE FONDO NEGRO --- */
+    /* Invierte el color de la imagen (negro a blanco) */
+    filter: invert(1);
+}
+
+/* --- Estilos de Navegación (Navbar) --- */
+.navbar ul {
+    display: flex;
+    /* Espacio entre elementos del menú */
+    gap: 1.5rem;
+}
+
+.navbar a {
+    /* Color de texto claro (para fondo oscuro) */
+    color: var(--color-texto-claro);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    /* Efecto de subrayado sutil al pasar el mouse */
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+/* Subrayado animado (pseudo-elemento) */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-acento-rojo);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    /* Muestra el subrayado al pasar el mouse */
+    width: 100%;
+}
+
+/* Estilo para el enlace de la página activa */
+.navbar a.active {
+    /* Color de acento para la página activa */
+    color: var(--color-acento-rojo);
+    font-weight: 700;
+}
+
+/* Oculta el menú hamburguesa en escritorio */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* --- Estilos de Botones (Utilidad) --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-family-sans);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+}
+
+/* Botón de acento (rojo) */
+.btn-accent {
+    background-color: var(--color-acento-rojo);
+    color: var(--color-texto-claro);
+}
+
+.btn-accent:hover {
+    background-color: #4a0606;
+    color: var(--color-texto-claro);
+    transform: translateY(-2px);
+}
+
+/* --- Estilos del Pie de Página (Footer) --- */
+.site-footer {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-claro);
+    padding: 2rem 0;
+    margin-top: 3rem; /* Espacio antes del footer */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* En móviles, se apilan */
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    color: var(--color-gris-claro);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--color-texto-claro);
+    /* --- TAMAÑO DE ICONOS DE FOOTER AUMENTADO --- */
+    font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    color: var(--color-acento-rojo);
+}
+
+/* --- (index.html) Estilos del Hero --- */
+.hero {
+    /* Imagen de fondo (placeholder) - ACTUALIZADO */
+    /* La imagen de fondo del body ya está, solo necesitamos la superposición oscura */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background-size: cover;
+    background-position: center;
+    /* No necesitamos repetir la imagen del body, así que usamos un blend mode o solo la superposición */
+    background-attachment: fixed; /* Mantiene el efecto paralaje */
+
+    min-height: 70vh; /* Altura del hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-texto-claro);
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    color: var(--color-texto-claro);
+    font-size: 3.5rem;
+}
+
+.hero-content p {
+    color: var(--color-texto-claro);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* --- (index.html & tienda.html) Estilos de Productos --- */
+.featured-products, .collection, .categories, .contact-links, .location {
+    /* Espaciado vertical estándar para secciones */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.featured-products h2, .collection h1, .categories h1, .contact-links h1, .location h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Cuadrícula de productos */
+.product-grid {
+    display: grid;
+    /* Columnas (responsive) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* --- AJUSTE PARA (index.html) - 4 PRODUCTOS --- */
+/* En pantallas grandes, fuerza 2 columnas para el index */
+@media (min-width: 992px) {
+    .featured-products .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px; /* Centra la cuadrícula de 2 */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* Tarjeta de producto individual */
+.product-card {
+    /* Fondo blanco con transparencia para ver la imagen de fondo del body */
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--color-gris-claro);
+    border-radius: 5px;
+    overflow: hidden; /* Para que la imagen respete el borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    /* Altura fija para mantener consistencia */
+    height: 300px;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin: 1rem 1rem 0.5rem 1rem;
+    color: var(--color-texto-principal);
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-gris-oscuro);
+    margin: 0 1rem 1rem 1rem;
+}
+
+/* --- (catalogo.html) Estilos de Categorías --- */
+.category-grid {
+    display: grid;
+    /* 2 columnas en escritorio, 1 en móvil */
+    /* ACTUALIZADO: Forzamos 2 columnas en escritorio para 4 items */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px; /* Ancho máximo para centrar las 2 columnas */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* En pantallas más pequeñas, volvemos a 1 columna */
+@media (max-width: 600px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-card a {
+    /* Asegura que el enlace cubra toda la tarjeta */
+    display: block;
+}
+
+.category-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover .category-image {
+    /* Efecto de zoom sutil al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.category-title {
+    /* Título superpuesto */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--color-texto-claro);
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+/* --- (contacto.html) Estilos de Enlaces de Contacto --- */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Ancho máximo de los botones */
+    max-width: 400px;
+    /* Centrado */
+    margin: 0 auto;
+}
+
+.contact-btn {
+    /* Ocupa todo el ancho del contenedor */
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    /* Colores específicos */
+}
+.contact-btn.whatsapp { background-color: #25D366; color: white; }
+.contact-btn.instagram { background-color: #C13584; color: white; }
+.contact-btn.facebook { background-color: #1877F2; color: white; }
+.contact-btn.tiktok { background-color: #000000; color: white; }
+
+.contact-btn:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+/* --- NUEVO: Estilo para iconos en botones de contacto --- */
+.contact-btn i {
+    margin-right: 0.75rem; /* Espacio entre icono y texto */
+    font-size: 1.2rem;
+    /* Alinea el icono verticalmente con el texto */
+    vertical-align: middle;
+}
+
+
+/* --- (ubicacion.html) Estilos de Ubicación --- */
+.location-content {
+    display: flex;
+    /* Se apilan en móvil */
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    /* Fondo blanco transparente para legibilidad sobre la imagen */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.location-info {
+    /* Ocupa 1/3 */
+    flex: 1;
+    min-width: 280px;
+}
+
+.location-map {
+    /* Ocupa 2/3 */
+    flex: 2;
+    min-width: 300px;
+}
+
+.location-map iframe {
+    /* Responsive */
+    width: 100%;
+    height: 450px;
+    border: 1px solid var(--color-gris-claro);
+    border-radius: 5px;
+}
+
+/* --- Estilos Responsivos (Media Queries) --- */
+
+/* Para tablets y móviles (ej: < 768px) */
+@media (max-width: 768px) {
+    
+    /* Ajustes de fuente para pantallas pequeñas */
+    h1 { font-size: 2rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+
+    /* Muestra el ícono de hamburguesa */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+    }
+
+    /* Estilo de las barras de la hamburguesa */
+    .hamburger-menu span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-texto-claro);
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    /* Animación de la 'X' cuando el menú está activo */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+
+    /* Oculta la navegación de escritorio */
+    .navbar {
+        /* Posiciona el menú fuera de la pantalla */
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: var(--color-fondo-oscuro);
+        /* Oculto por defecto */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+    }
+
+    /* Estilo del menú cuando está activo (JS añade esta clase) */
+    .navbar.active {
+        /* Muestra el menú */
+        max-height: 500px; /* Suficiente altura para los enlaces */
+    }
+
+    /* Apila los enlaces del menú verticalmente */
+    .navbar ul {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0;
+    }
+
+    .navbar li {
+        width: 100%;
+    }
+
+    .navbar a {
+        /* Ocupa todo el ancho para facilitar el clic */
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--color-gris-claro);
+    }
+    
+    .navbar li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Quita la animación de subrayado en móvil */
+    .navbar a::after {
+        display: none;
+    }
+
+    /* Centra el contenido del footer en móvil */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    /* Ajusta la cuadrícula de productos en móvil (1 o 2 columnas) */
+    .product-grid {
+        /* 2 columnas si caben, si no 1 */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    /* Ajuste para index.html en móvil */
+    @media (min-width: 992px) {
+        .featured-products .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    /* Ajuste para catalogo.html en móvil (ya está cubierto arriba) */
+}
