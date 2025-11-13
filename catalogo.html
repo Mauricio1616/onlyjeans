@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título específico de la página de Catálogo - ACTUALIZADO -->
+    <title>Catálogo - ONLY JEANS</title>
+    
+    <!-- --- ICONOS (Font Awesome) --- -->
+    <!-- Enlace a la biblioteca de iconos Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Enlace a la hoja de estilos CSS - ACTUALIZADO -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Enlace al script JS (deferido) -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- INICIO DEL ENCABEZADO (Idéntico, excepto la clase 'active') -->
+    <header class="site-header">
+        <div class="container header-content">
+            <!-- Logo de la tienda - ACTUALIZADO -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagenes/onlyjeans.png" alt="Logo ONLY JEANS">
+                </a>
+            </div>
+            
+            <!-- Icono de menú hamburguesa -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navegación principal -->
+            <nav class="navbar" id="navBar">
+                <ul>
+                    <!-- Enlace de navegación: Inicio -->
+                    <li><a href="index.html">Inicio</a></li>
+                    <!-- Enlace de navegación: Tienda -->
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <!-- Enlace de navegación: Catálogo (Página actual) -->
+                    <li><a href="catalogo.html" class="active">Catálogo</a></li>
+                    <!-- Enlace de navegación: Contacto -->
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <!-- Enlace de navegación: Ubicación -->
+                    <li><a href="ubicacion.html">Ubicación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- FIN DEL ENCABEZADO -->
+
+    <!-- INICIO DEL CONTENIDO PRINCIPAL DEL CATÁLOGO -->
+    <main>
+        
+        <!-- Sección de Categorías -->
+        <section class="categories container">
+            
+            <!-- Título de la página -->
+            <h1>Categorías</h1>
+            
+            <!-- Cuadrícula de Categorías -->
+            <div class="category-grid">
+                
+                <!-- Categoría 1: Faldas -->
+                <div class="category-card">
+                    <!-- Enlace que lleva a la tienda filtrada (ejemplo) -->
+                    <a href="tienda.html?categoria=faldas">
+                        <img src="imagenes/faldas.png" alt="Categoría Faldas" class="category-image">
+                        <h3 class="category-title">Faldas</h3>
+                    </a>
+                </div>
+
+                <!-- Categoría 2: Jeans -->
+                <div class="category-card">
+                    <a href="tienda.html?categoria=jeans">
+                        <img src="imagenes/jean.png" alt="Categoría Jeans" class="category-image">
+                        <h3 class="category-title">Jeans</h3>
+                    </a>
+                </div>
+
+                <!-- Categoría 3: Blusas -->
+                <div class="category-card">
+                    <a href="tienda.html?categoria=blusas">
+                        <img src="imagenes/blusas.png" alt="Categoría Blusas" class="category-image">
+                        <h3 class="category-title">Blusas</h3>
+                    </a>
+                </div>
+
+                <!-- Categoría 4: Shorts -->
+                <div class="category-card">
+                    <a href="tienda.html?categoria=shorts">
+                        <img src="imagenes/shorts.png" alt="Categoría Shorts" class="category-image">
+                        <h3 class="category-title">Shorts</h3>
+                    </a>
+                </div>
+
+                
+
+            </div>
+        </section>
+
+    </main>
+    <!-- FIN DEL CONTENIDO PRINCIPAL -->
+
+    <!-- INICIO DEL PIE DE PÁGINA (Idéntico) -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <!-- Copyright - ACTUALIZADO -->
+            <p class="copyright">© 2025 ONLY JEANS. Todos los derechos reservados.</p>
+            
+            <!-- Enlaces a Redes Sociales (ICONOS ACTUALIZADOS) -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1Asd7WnmJU/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/onlyjeans_sc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@onlyjeansbolivia" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- FIN DEL PIE DE PÁGINA -->
+
+</body>
+</html>
