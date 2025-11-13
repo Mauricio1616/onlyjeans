@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Especifica el idioma del contenido para accesibilidad y SEO -->
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres (imprescindible) -->
+    <meta charset="UTF-8">
+    <!-- Configura el viewport para diseño responsive (móvil primero) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la página (Importante para SEO y pestaña del navegador) - ACTUALIZADO -->
+    <title>Tienda - ONLY JEANS</title>
+    
+    <!-- --- ICONOS (Font Awesome) --- -->
+    <!-- Enlace a la biblioteca de iconos Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Enlace a la hoja de estilos CSS única - ACTUALIZADO -->
+    <!-- (Asumiendo que style.css está ahora en la raíz) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Enlace al archivo JavaScript -->
+    <!-- 'defer' asegura que el script se ejecute después de parsear el HTML -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- INICIO DEL ENCABEZADO (Consistente en todas las páginas) -->
+    <header class="site-header">
+        <!-- Contenedor para centrar el contenido del encabezado -->
+        <div class="container header-content">
+            <!-- Logo de la tienda - ACTUALIZADO -->
+            <div class="logo">
+                <!-- El enlace en el logo lleva a la página de inicio -->
+                <a href="index.html">
+                    <img src="imagenes/onlyjeans.png" alt="Logo ONLY JEANS">
+                </a>
+            </div>
+            
+            <!-- Icono de menú hamburguesa (visible solo en móviles) -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <!-- Estas líneas crean el ícono -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navegación principal -->
+            <nav class="navbar" id="navBar">
+                <ul>
+                    <!-- Enlace de navegación: Inicio -->
+                    <li><a href="index.html">Inicio</a></li>
+                    <!-- Enlace de navegación: Tienda (Página actual) -->
+                    <li><a href="tienda.html" class="active">Tienda</a></li>
+                    <!-- Enlace de navegación: Catálogo -->
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <!-- Enlace de navegación: Contacto -->
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <!-- Enlace de navegación: Ubicación -->
+                    <li><a href="ubicacion.html">Ubicación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- FIN DEL ENCABEZADO -->
+
+    <!-- INICIO DEL CONTENIDO PRINCIPAL DE LA TIENDA -->
+    <main>
+        
+        <!-- Sección de la Colección -->
+        <section class="collection container">
+            
+            <!-- Título de la página - ACTUALIZADO -->
+            <h1>Nuestra Colección</h1>
+            
+            
+            <!-- Cuadrícula de productos (8-12 productos) - ACTUALIZADA CON TU CONTENIDO -->
+            <div class="product-grid">
+                
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <img src="imagenes/producto1.jpg" alt="Producto 1" class="product-image">
+                    <h3 class="product-title">Jean</h3>
+                    <p class="product-price">380Bs</p>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <img src="imagenes/producto2.jpg" alt="Producto 2" class="product-image">
+                    <h3 class="product-title">Short</h3>
+                    <p class="product-price">180Bs</p>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <img src="imagenes/producto3.jpg" alt="Producto 3" class="product-image">
+                    <h3 class="product-title">Blusa</h3>
+                    <p class="product-price">280Bs</p>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <img src="imagenes/producto4.jpg" alt="Producto 4" class="product-image">
+                    <h3 class="product-title">Falda</h3>
+                    <p class="product-price">150Bs</p>
+                </div>
+
+                <!-- Producto 5 (Repitiendo tu lógica) -->
+                <div class="product-card">
+                    <img src="imagenes/producto5.jpg" alt="Producto 5" class="product-image">
+                    <h3 class="product-title">Jean (Modelo 2)</h3>
+                    <p class="product-price">380Bs</p>
+                </div>
+
+                <!-- Producto 6 (Repitiendo tu lógica) -->
+                <div class="product-card">
+                    <img src="imagenes/producto6.jpg" alt="Producto 6" class="product-image">
+                    <h3 class="product-title">Short (Modelo 2)</h3>
+                    <p class="product-price">180Bs</p>
+                </div>
+
+                <!-- Producto 7 (Repitiendo tu lógica) -->
+                <div class="product-card">
+                    <img src="imagenes/producto7.jpg" alt="Producto 7" class="product-image">
+                    <h3 class="product-title">Blusa (Modelo 2)</h3>
+                    <p class="product-price">280Bs</p>
+                </div>
+
+                <!-- Producto 8 (Repitiendo tu lógica) -->
+                <div class="product-card">
+                    <img src="imagenes/producto8.jpg" alt="Producto 8" class="product-image">
+                    <h3 class="product-title">Falda (Modelo 2)</h3>
+                    <p class="product-price">150Bs</p>
+                </div>
+
+                <!-- (Se pueden agregar más productos (9-12) siguiendo esta estructura) -->
+
+            </div>
+        </section>
+
+    </main>
+    <!-- FIN DEL CONTENIDO PRINCIPAL -->
+
+    <!-- INICIO DEL PIE DE PÁGINA (Consistente en todas las páginas) -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <!-- Información de Copyright - ACTUALIZADO -->
+            <p class="copyright">© 2025 ONLY JEANS. Todos los derechos reservados.</p>
+            
+            <!-- Enlaces a Redes Sociales (ICONOS ACTUALIZADOS) -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1Asd7WnmJU/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/onlyjeans_sc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@onlyjeansbolivia" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- FIN DEL PIE DE PÁGINA -->
+
+</body>
+</html>
