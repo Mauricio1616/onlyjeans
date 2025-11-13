@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título específico de la página de Ubicación - ACTUALIZADO -->
+    <title>Ubicación - ONLY JEANS</title>
+    
+    <!-- --- ICONOS (Font Awesome) --- -->
+    <!-- Enlace a la biblioteca de iconos Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Enlace a la hoja de estilos CSS - ACTUALIZADO -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Enlace al script JS (deferido) -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- INICIO DEL ENCABEZADO (Idéntico, excepto la clase 'active') -->
+    <header class="site-header">
+        <div class="container header-content">
+            <!-- Logo de la tienda - ACTUALIZADO -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagenes/onlyjeans.png" alt="Logo ONLY JEANS">
+                </a>
+            </div>
+            
+            <!-- Icono de menú hamburguesa -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navegación principal -->
+            <nav class="navbar" id="navBar">
+                <ul>
+                    <!-- Enlace de navegación: Inicio -->
+                    <li><a href="index.html">Inicio</a></li>
+                    <!-- Enlace de navegación: Tienda -->
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <!-- Enlace de navegación: Catálogo -->
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <!-- Enlace de navegación: Contacto -->
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <!-- Enlace de navegación: Ubicación (Página actual) -->
+                    <li><a href="ubicacion.html" class="active">Ubicación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- FIN DEL ENCABEZADO -->
+
+    <!-- INICIO DEL CONTENIDO PRINCIPAL DE UBICACIÓN -->
+    <main>
+        
+        <!-- Sección de Ubicación -->
+        <section class="location container">
+            
+            <!-- Título de la página -->
+            <h1>Visítanos</h1>
+            
+            <!-- Contenedor flex para info y mapa -->
+            <div class="location-content">
+                
+                <!-- Columna de Información -->
+                <div class="location-info">
+                    <h3>Nuestra Tienda</h3>
+                    <p>
+                        <!-- Dirección actualizada -->
+                        <strong>Dirección:</strong><br>
+                        Centro Comercial Norte (CCN)<br>
+                        Santa Cruz de la Sierra, Bolivia
+                    </p>
+                    <p>
+                        <strong>Horarios:</strong><br>
+                        Lunes a Sábado: 10:00 - 20:00<br>
+                        Domingo: 11:00 - 18:00
+                    </p>
+                    <p>
+                        <strong>Teléfono:</strong><br>
+                        +591 70448943
+                    </p>
+                </div>
+                
+                <!-- Columna del Mapa Embebido -->
+                <div class="location-map">
+                    <!-- Mapa de Google Embebido - ACTUALIZADO -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.78954316881!2d-63.16754912483161!3d-17.760237583196237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e7253d600ea1%3A0x919ec62ec80e4988!2sCentro%20Comercial%20Norte%20CCN!5e0!3m2!1ses-419!2sbo!4v1731481845178!5m2!1ses-419!2sbo" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <!-- FIN DEL CONTENIDO PRINCIPAL -->
+
+    <!-- INICIO DEL PIE DE PÁGINA (Idéntico) -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <!-- Copyright - ACTUALIZADO -->
+            <p class="copyright">© 2025 ONLY JEANS. Todos los derechos reservados.</p>
+            
+            <!-- Enlaces a Redes Sociales (ICONOS ACTUALIZADOS) -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1Asd7WnmJU/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/onlyjeans_sc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@onlyjeansbolivia" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- FIN DEL PIE DE PÁGINA -->
+
+</body>
+</html>
